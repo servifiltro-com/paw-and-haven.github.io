@@ -1,11 +1,13 @@
-# PAW & HAVEN — V1
+# PAW & HAVEN Changelog
 
-- Premium responsive storefront
-- Realistic pet-focused visual assets
-- Product catalog with 16 products
-- Search, sorting and category filtering
-- Cart and wishlist persistence
-- Product detail modal
-- Support panel and contact links
-- FAQ and newsletter interactions
-- Responsive mobile layout
+## V2 — Complete Layout Rebuild
+
+- Rebuilt the page structure from the ground up.
+- Corrected header alignment and navigation behavior.
+- Reworked hero layout so text and imagery stay inside their own columns.
+- Standardized product image framing.
+- Reworked collections and promotional sections.
+- Added responsive breakpoints for tablet and mobile.
+- Improved cart, wishlist, search and modal interactions.
+- Added a complete support section and FAQ.
+- Removed conflicting legacy CSS patterns from V1.
