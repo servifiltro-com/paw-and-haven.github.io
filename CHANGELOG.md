@@ -6,3 +6,5 @@
 - Added responsive mobile layout and accessible semantic structure.
 
 - V8: rebuilt all 8 product image assets as individual clean product photos with deterministic filenames; removed legacy product images to prevent stale-cache reuse.
+
+V9 — Removed duplicate HTML banner text so each promotional banner displays its artwork/text only once.
