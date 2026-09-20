@@ -1,13 +1,20 @@
-# PAW & HAVEN Changelog
+# PAW & HAVEN V3
 
-## V2 — Complete Layout Rebuild
+## Visual rebuild
+- Replaced generic/random image placement with explicit local assets.
+- Added dedicated hero image asset.
+- Added 7 category image assets.
+- Added 2 promotional banner assets.
+- Added 8 product image assets.
+- Standardized image containers and responsive sizing.
 
-- Rebuilt the page structure from the ground up.
-- Corrected header alignment and navigation behavior.
-- Reworked hero layout so text and imagery stay inside their own columns.
-- Standardized product image framing.
-- Reworked collections and promotional sections.
-- Added responsive breakpoints for tablet and mobile.
-- Improved cart, wishlist, search and modal interactions.
-- Added a complete support section and FAQ.
-- Removed conflicting legacy CSS patterns from V1.
+## Functionality
+- Search
+- Category filtering
+- Sorting
+- Cart persistence
+- Wishlist persistence
+- Quantity controls
+- Support form
+- Newsletter form
+- Mobile responsive navigation layout

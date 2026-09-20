@@ -1,90 +1,31 @@
-# PAW & HAVEN — V2
+# PAW & HAVEN — Web V3
 
-### Premium Pet Essentials for a Happier Life
+A complete premium pet e-commerce front-end rebuilt around individually prepared local image assets. V3 focuses on predictable layout, clean image framing and a polished shopping experience.
 
-PAW & HAVEN V2 is a complete front-end pet lifestyle storefront rebuilt with a clean, controlled layout. This version focuses on visual consistency, correctly contained imagery, responsive behavior and functional storefront interactions.
+## What changed in V3
 
-## V2 Improvements
+- Rebuilt the visual structure from the ground up.
+- Local image assets are assigned explicitly to each category, banner and product card.
+- Product images use controlled containers with `object-fit: contain`.
+- Hero image has its own dedicated responsive container.
+- Category images have fixed, consistent presentation areas.
+- Product grid has uniform card heights and image frames.
+- No remote image URLs or random image selection.
+- Responsive desktop/tablet/mobile layouts.
+- Functional cart, wishlist, search, filters, sorting, support form and newsletter.
 
-- Rebuilt header/navigation structure
-- Responsive hero with controlled image frame
-- Consistent product image containers using `object-fit: contain`
-- Clean collection cards with controlled image crops
-- Responsive product grid
-- Search, category filtering and sorting
-- Product detail modal
-- Wishlist with local persistence
-- Cart drawer with quantity controls and local persistence
-- Support contact section and message form
-- FAQ accordion
-- Newsletter interaction
-- Mobile navigation
-- Promotional sections
-- Responsive footer
-- Improved spacing, typography, borders and responsive breakpoints
+## Support
 
-## Store Information
+Email: support@pawandhaven.com  
+Phone: +1 (512) 555-0123  
+Location: Austin, TX, United States
 
-**Brand:** PAW & HAVEN  
-**Category:** Pet essentials, accessories, toys, grooming and lifestyle products  
-**Support:** support@pawandhaven.com  
-**Phone:** +1 (512) 555-0123  
-**Location:** Austin, TX, United States
+## Technologies
 
-## Categories
-
-Beds & Comfort · Toys · Walking & Outdoor · Feeding · Grooming · Travel · Outdoor · Apparel
-
-## Technology
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- CSS Grid / Flexbox
-- LocalStorage
-- Responsive design
-
-## Structure
-
-```text
-paw-and-haven/
-├── index.html
-├── README.md
-├── CHANGELOG.md
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── assets/
-    ├── logo.jpg
-    └── images/
-```
-
-## Functional Features
-
-The storefront includes a working search field, category filters, sorting controls, product details, wishlist, cart quantity controls, cart persistence, support form feedback, newsletter feedback and mobile navigation.
-
-Checkout is intentionally a front-end demo and does not process real payments.
-
-## Visual Standards
-
-Product images are placed inside fixed media frames with `object-fit: contain` so products remain visible and centered instead of being stretched or unpredictably cropped. Hero and promotional photography use dedicated containers with controlled cropping.
+HTML5 · CSS3 · Vanilla JavaScript · LocalStorage
 
 ## Status
 
-**Project in development**
-
-## Future Enhancements
-
-- Real checkout/payment gateway
-- Customer accounts
-- Inventory API
-- Order tracking
-- Reviews and ratings
-- Product variants
-- Shipping API
-- CMS integration
-
----
+Project in development.
 
 © 2026 PAW & HAVEN. All rights reserved.
