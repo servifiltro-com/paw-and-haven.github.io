@@ -1,20 +1,20 @@
 const products=[
-['bed','Beds & Comfort','Orthopedic Pet Bed',49.99,'assets/prod_bed.jpg?v=6','Supportive everyday bed with a soft, cozy finish.'],
-['toy','Toys','Plush Elephant Toy',14.99,'assets/prod_elephant.jpg?v=6','Soft enrichment toy for gentle play sessions.'],
-['walk','Walking & Outdoor','Premium Leather Collar',24.99,'assets/prod_collar.jpg?v=6','Classic leather collar with a polished finish.'],
-['feed','Feeding','Stainless Steel Bowl',19.99,'assets/prod_bowl.jpg?v=6','Easy-clean bowl for daily meals and water.'],
-['groom','Grooming','Deshedding Brush',24.99,'assets/prod_brush.jpg?v=6','Comfortable grooming brush for regular coat care.'],
-['travel','Travel','Pet Carrier',59.99,'assets/prod_carrier.jpg?v=6','Secure travel carrier for everyday trips.'],
-['toy','Toys','Rope Chew Toy',12.99,'assets/prod_rope.jpg?v=6','Textured rope toy made for active play.'],
-['walk','Walking & Outdoor','No-Pull Harness',34.99,'assets/prod_harness.jpg?v=6','Comfort-focused harness for daily walks.'],
-['bed','Beds & Comfort','Calming Lounge Bed',64.99,'assets/prod_bed.jpg?v=6','Deep comfort for naps and quiet time.'],
-['toy','Toys','Soft Companion Elephant',16.99,'assets/prod_elephant.jpg?v=6','Cuddly companion for relaxed play.'],
-['walk','Walking & Outdoor','Classic Everyday Collar',21.99,'assets/prod_collar.jpg?v=6','Simple, durable collar for daily adventures.'],
-['feed','Feeding','Everyday Pet Bowl',17.99,'assets/prod_bowl.jpg?v=6','Clean-lined feeding bowl for home use.'],
-['groom','Grooming','Daily Coat Brush',22.99,'assets/prod_brush.jpg?v=6','Gentle brush for keeping coats tidy.'],
-['travel','Travel','Compact Travel Carrier',54.99,'assets/prod_carrier.jpg?v=6','Practical carrier for short trips.'],
-['toy','Toys','Heavy-Duty Rope Toy',15.99,'assets/prod_rope.jpg?v=6','Durable rope for interactive games.'],
-['walk','Walking & Outdoor','Adventure Harness',39.99,'assets/prod_harness.jpg?v=6','Supportive harness for outdoor exploration.']
+['bed','Beds & Comfort','Orthopedic Pet Bed',49.99,'assets/prod_bed.jpg?v=7','Supportive everyday bed with a soft, cozy finish.'],
+['toy','Toys','Plush Elephant Toy',14.99,'assets/prod_elephant.jpg?v=7','Soft enrichment toy for gentle play sessions.'],
+['walk','Walking & Outdoor','Premium Leather Collar',24.99,'assets/prod_collar.jpg?v=7','Classic leather collar with a polished finish.'],
+['feed','Feeding','Stainless Steel Bowl',19.99,'assets/prod_bowl.jpg?v=7','Easy-clean bowl for daily meals and water.'],
+['groom','Grooming','Deshedding Brush',24.99,'assets/prod_brush.jpg?v=7','Comfortable grooming brush for regular coat care.'],
+['travel','Travel','Pet Carrier',59.99,'assets/prod_carrier.jpg?v=7','Secure travel carrier for everyday trips.'],
+['toy','Toys','Rope Chew Toy',12.99,'assets/prod_rope.jpg?v=7','Textured rope toy made for active play.'],
+['walk','Walking & Outdoor','No-Pull Harness',34.99,'assets/prod_harness.jpg?v=7','Comfort-focused harness for daily walks.'],
+['bed','Beds & Comfort','Calming Lounge Bed',64.99,'assets/prod_bed.jpg?v=7','Deep comfort for naps and quiet time.'],
+['toy','Toys','Soft Companion Elephant',16.99,'assets/prod_elephant.jpg?v=7','Cuddly companion for relaxed play.'],
+['walk','Walking & Outdoor','Classic Everyday Collar',21.99,'assets/prod_collar.jpg?v=7','Simple, durable collar for daily adventures.'],
+['feed','Feeding','Everyday Pet Bowl',17.99,'assets/prod_bowl.jpg?v=7','Clean-lined feeding bowl for home use.'],
+['groom','Grooming','Daily Coat Brush',22.99,'assets/prod_brush.jpg?v=7','Gentle brush for keeping coats tidy.'],
+['travel','Travel','Compact Travel Carrier',54.99,'assets/prod_carrier.jpg?v=7','Practical carrier for short trips.'],
+['toy','Toys','Heavy-Duty Rope Toy',15.99,'assets/prod_rope.jpg?v=7','Durable rope for interactive games.'],
+['walk','Walking & Outdoor','Adventure Harness',39.99,'assets/prod_harness.jpg?v=7','Supportive harness for outdoor exploration.']
 ];
 let cart=JSON.parse(localStorage.getItem('pawCart')||'[]'), wishes=JSON.parse(localStorage.getItem('pawWish')||'[]'), active='All';
 const $=s=>document.querySelector(s); const grid=$('#productGrid');
