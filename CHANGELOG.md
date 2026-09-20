@@ -1,6 +1,7 @@
-# PAW & HAVEN — V4
+# PAW & HAVEN — V6
 
-- Rebuilt the storefront around a clean pet-retail shopping architecture.
-- Replaced ambiguous image placement with explicit per-section image assignments.
-- Added category-led navigation, search, filters, sorting, cart, wishlist and support.
-- Added responsive mobile layout and accessible semantic structure.
+## Image fix
+- Replaced the product image crops so no neighboring-product fragments, text, hearts, or UI elements appear inside product photos.
+- Tightened the framing so each product fills the card cleanly while remaining fully visible.
+- Added cache-busting query strings to product image paths so browsers do not reuse older image assets.
+- No store layout, colors, product data, or functionality were intentionally changed.
