@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PAW & HAVEN — premium pet essentials, accessories, toys, grooming and everyday favorites.">
+  <title>PAW & HAVEN — Pet Essentials</title>
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement"><span>🚚 Free shipping on orders over $50</span><span>🐾 Happy Pets. Happy People.</span><span>☎ <a href="mailto:support@pawandhaven.com">Support</a> · <a href="#faq">FAQ</a></span></div>
+
+  <header class="header">
+    <a class="brand" href="#home" aria-label="PAW & HAVEN home">
+      <img src="assets/logo.jpg" alt="PAW & HAVEN logo">
+      <div><strong>PAW & HAVEN</strong><small>PET ESSENTIALS FOR A HAPPIER LIFE</small></div>
+    </a>
+    <nav>
+      <a class="active" href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">♡ <span id="wishCount">0</span></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">PREMIUM PET ESSENTIALS</span>
+        <h1>Happier Pets.<br><em>Brighter Days.</em></h1>
+        <p>Discover high-quality pet products designed for comfort, care and unforgettable moments together.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#shop">Shop Now →</a>
+          <a class="btn light" href="#collections">Explore Collections</a>
+        </div>
+        <div class="trust-row">
+          <span>🚚 <b>Free Shipping</b><small>Orders over $50</small></span>
+          <span>✓ <b>Secure Shopping</b><small>Shop with confidence</small></span>
+          <span>♥ <b>Happy Pets</b><small>Happy People</small></span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/images/hero.jpg" alt="Happy dog and cat enjoying a cozy home">
+        <div class="hero-badge"><small>PAW & HAVEN</small><strong>More love,<br>every day.</strong></div>
+      </div>
+    </section>
+
+    <section class="categories wrap" id="collections">
+      <div class="section-head"><div><span class="eyebrow">SHOP BY NEED</span><h2>Everything they need.</h2></div><a href="#shop">View all →</a></div>
+      <div class="category-grid">
+        <button class="cat" data-filter="Beds"><img src="assets/images/bed.jpg" alt=""><b>Beds & Comfort</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Toys"><img src="assets/images/toy.jpg" alt=""><b>Toys</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Walking"><img src="assets/images/collar.jpg" alt=""><b>Walking & Outdoor</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Feeding"><img src="assets/images/bowl.jpg" alt=""><b>Feeding</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Grooming"><img src="assets/images/grooming.jpg" alt=""><b>Grooming</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Travel"><img src="assets/images/carrier.jpg" alt=""><b>Travel</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Outdoor"><img src="assets/images/outdoor.jpg" alt=""><b>Outdoor</b><small>Shop now →</small></button>
+        <button class="cat" data-filter="Apparel"><img src="assets/images/apparel.jpg" alt=""><b>Apparel</b><small>Shop now →</small></button>
+      </div>
+    </section>
+
+    <section class="promos wrap">
+      <article class="promo"><img src="assets/images/promo-toys.jpg" alt=""><div><span>PLAY EVERY DAY</span><h3>Toys for happier, healthier pets.</h3><button data-filter="Toys">Shop Toys →</button></div></article>
+      <article class="promo"><img src="assets/images/promo-beds.jpg" alt=""><div><span>REST IN COMFORT</span><h3>Beds designed for better sleep.</h3><button data-filter="Beds">Shop Beds →</button></div></article>
+      <article class="promo"><img src="assets/images/promo-grooming.jpg" alt=""><div><span>LOOK & FEEL GREAT</span><h3>Grooming essentials for everyday care.</h3><button data-filter="Grooming">Shop Grooming →</button></div></article>
+    </section>
+
+    <section class="shop wrap" id="shop">
+      <div class="section-head">
+        <div><span class="eyebrow">CURATED FAVORITES</span><h2>Featured products</h2><p>Practical essentials selected for happy pets.</p></div>
+        <div class="shop-tools"><input id="searchInput" type="search" placeholder="Search products..."><select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name A–Z</option></select></div>
+      </div>
+      <div class="filter-row" id="filters">
+        <button class="filter active" data-filter="All">All</button>
+        <button class="filter" data-filter="Beds">Beds</button>
+        <button class="filter" data-filter="Toys">Toys</button>
+        <button class="filter" data-filter="Walking">Walking</button>
+        <button class="filter" data-filter="Feeding">Feeding</button>
+        <button class="filter" data-filter="Grooming">Grooming</button>
+        <button class="filter" data-filter="Travel">Travel</button>
+        <button class="filter" data-filter="Outdoor">Outdoor</button>
+        <button class="filter" data-filter="Apparel">Apparel</button>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="story wrap" id="about">
+      <div class="story-photo"><img src="assets/images/promo-beds.jpg" alt="Comfort-focused pet lifestyle"></div>
+      <div class="story-copy"><span class="eyebrow">THE PAW & HAVEN STANDARD</span><h2>Better products.<br><em>Better everyday moments.</em></h2><p>We believe pet essentials should be practical, beautiful and genuinely useful. PAW & HAVEN brings comfort, care and modern design together in one thoughtful collection.</p><ul><li>Carefully selected everyday essentials</li><li>Clean, modern designs for real homes</li><li>Friendly support when you need it</li><li>Fast shipping on qualifying orders</li></ul><a class="btn primary" href="#support">Talk to support →</a></div>
+    </section>
+
+    <section class="support wrap" id="support">
+      <div><span class="eyebrow">WE'RE HERE TO HELP</span><h2>Need a hand?</h2><p>Questions about products, orders or anything else? Our support team is ready to help.</p></div>
+      <div class="support-cards"><a href="mailto:support@pawandhaven.com"><b>✉ Email Support</b><span>support@pawandhaven.com</span></a><a href="tel:+15125550123"><b>☎ Call Support</b><span>+1 (512) 555-0123</span></a><button id="supportChat"><b>💬 Quick Support</b><span>Open the support panel</span></button></div>
+    </section>
+
+    <section class="faq wrap" id="faq">
+      <div class="section-head"><div><span class="eyebrow">QUESTIONS</span><h2>Frequently asked</h2></div></div>
+      <div class="faq-grid">
+        <details><summary>Do you offer free shipping?</summary><p>Yes. Orders over $50 qualify for free standard shipping.</p></details>
+        <details><summary>How can I contact support?</summary><p>Email support@pawandhaven.com or use the support panel on this page.</p></details>
+        <details><summary>Can I change quantities in my cart?</summary><p>Yes. Open your cart and use the plus and minus controls beside each item.</p></details>
+        <details><summary>Can I save products for later?</summary><p>Use the heart icon on any product to add it to your favorites.</p></details>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div><span class="eyebrow">STAY IN THE LOOP</span><h2>Good things for good pets.</h2><p>New arrivals, seasonal favorites and helpful pet tips.</p></div>
+      <form id="newsletter"><input type="email" required placeholder="Your email address"><button class="btn primary">Subscribe</button></form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main wrap">
+      <div class="footer-brand"><img src="assets/logo.jpg" alt="PAW & HAVEN"><p>Premium pet essentials for a happier life.</p></div>
+      <div><b>Shop</b><a href="#shop">All products</a><a href="#collections">Collections</a><a href="#shop">New arrivals</a></div>
+      <div><b>Help</b><a href="#support">Support</a><a href="#faq">FAQ</a><a href="mailto:support@pawandhaven.com">Contact</a></div>
+      <div><b>Company</b><a href="#about">Our story</a><a href="#about">Our standard</a><a href="#support">Careers</a></div>
+    </div>
+    <div class="footer-bottom wrap"><span>© 2026 PAW & HAVEN. All rights reserved.</span><span>Austin, TX · United States</span></div>
+  </footer>
+
+  <aside class="drawer" id="drawer"><div class="drawer-head"><h3>Your cart</h3><button id="closeDrawer">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div><button class="btn primary full" id="checkoutBtn">Checkout</button><p class="mini">Demo storefront — checkout is not connected to a payment processor.</p></aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="productModal"><button class="modal-close" data-close>×</button><div id="modalContent"></div></div>
+  <div class="modal support-modal" id="supportModal"><button class="modal-close" data-close>×</button><span class="eyebrow">PAW & HAVEN SUPPORT</span><h2>How can we help?</h2><p>Send us a message and our support team can assist with products, orders and general questions.</p><a class="btn primary full" href="mailto:support@pawandhaven.com">Email Support</a><a class="btn light full" href="tel:+15125550123">Call +1 (512) 555-0123</a></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
