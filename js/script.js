@@ -1,21 +1,34 @@
 const products=[
-{id:1,n:'Orthopedic Pet Bed',c:'Beds & Comfort',p:49.99,img:'prod_bed.jpg',tag:'COMFORT',r:128},
-{id:2,n:'Plush Elephant Toy',c:'Toys',p:14.99,img:'prod_elephant.jpg',tag:'PLAY',r:96},
-{id:3,n:'Premium Leather Collar',c:'Walking & Outdoor',p:24.99,img:'prod_collar.jpg',tag:'WALK',r:84},
-{id:4,n:'Stainless Steel Bowl',c:'Feeding',p:19.99,img:'prod_bowl.jpg',tag:'FEEDING',r:112},
-{id:5,n:'Deshedding Brush',c:'Grooming',p:24.99,img:'prod_brush.jpg',tag:'GROOMING',r:76},
-{id:6,n:'Pet Carrier',c:'Travel',p:59.99,img:'prod_carrier.jpg',tag:'TRAVEL',r:91},
-{id:7,n:'Rope Chew Toy',c:'Toys',p:12.99,img:'prod_rope.jpg',tag:'PLAY',r:67},
-{id:8,n:'No-Pull Harness',c:'Walking & Outdoor',p:34.99,img:'prod_harness.jpg',tag:'WALK',r:103}
+['bed','Beds & Comfort','Orthopedic Pet Bed',49.99,'assets/prod_bed.jpg','Supportive everyday bed with a soft, cozy finish.'],
+['toy','Toys','Plush Elephant Toy',14.99,'assets/prod_elephant.jpg','Soft enrichment toy for gentle play sessions.'],
+['walk','Walking & Outdoor','Premium Leather Collar',24.99,'assets/prod_collar.jpg','Classic leather collar with a polished finish.'],
+['feed','Feeding','Stainless Steel Bowl',19.99,'assets/prod_bowl.jpg','Easy-clean bowl for daily meals and water.'],
+['groom','Grooming','Deshedding Brush',24.99,'assets/prod_brush.jpg','Comfortable grooming brush for regular coat care.'],
+['travel','Travel','Pet Carrier',59.99,'assets/prod_carrier.jpg','Secure travel carrier for everyday trips.'],
+['toy','Toys','Rope Chew Toy',12.99,'assets/prod_rope.jpg','Textured rope toy made for active play.'],
+['walk','Walking & Outdoor','No-Pull Harness',34.99,'assets/prod_harness.jpg','Comfort-focused harness for daily walks.'],
+['bed','Beds & Comfort','Calming Lounge Bed',64.99,'assets/prod_bed.jpg','Deep comfort for naps and quiet time.'],
+['toy','Toys','Soft Companion Elephant',16.99,'assets/prod_elephant.jpg','Cuddly companion for relaxed play.'],
+['walk','Walking & Outdoor','Classic Everyday Collar',21.99,'assets/prod_collar.jpg','Simple, durable collar for daily adventures.'],
+['feed','Feeding','Everyday Pet Bowl',17.99,'assets/prod_bowl.jpg','Clean-lined feeding bowl for home use.'],
+['groom','Grooming','Daily Coat Brush',22.99,'assets/prod_brush.jpg','Gentle brush for keeping coats tidy.'],
+['travel','Travel','Compact Travel Carrier',54.99,'assets/prod_carrier.jpg','Practical carrier for short trips.'],
+['toy','Toys','Heavy-Duty Rope Toy',15.99,'assets/prod_rope.jpg','Durable rope for interactive games.'],
+['walk','Walking & Outdoor','Adventure Harness',39.99,'assets/prod_harness.jpg','Supportive harness for outdoor exploration.']
 ];
-let cart=JSON.parse(localStorage.getItem('pawCart')||'[]'), wish=JSON.parse(localStorage.getItem('pawWish')||'[]');
-const $=s=>document.querySelector(s); const grid=$('#grid');
-function save(){localStorage.setItem('pawCart',JSON.stringify(cart));localStorage.setItem('pawWish',JSON.stringify(wish));updateCounts()}
-function updateCounts(){$('#cartCount').textContent=cart.reduce((a,x)=>a+x.q,0);$('#wishCount').textContent=wish.length}
-function toast(t){const x=$('#toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
-function render(){let arr=[...products];const q=$('#search').value.toLowerCase(), c=$('#category').value, s=$('#sort').value; if(q)arr=arr.filter(x=>(x.n+x.c).toLowerCase().includes(q));if(c!=='all')arr=arr.filter(x=>x.c===c);if(s==='low')arr.sort((a,b)=>a.p-b.p);if(s==='high')arr.sort((a,b)=>b.p-a.p);if(s==='az')arr.sort((a,b)=>a.n.localeCompare(b.n));grid.innerHTML=arr.map(x=>`<article class="product"><button class="heart" data-w="${x.id}">${wish.includes(x.id)?'♥':'♡'}</button><div class="photo"><img src="assets/${x.img}" alt="${x.n}"></div><div class="pbody"><span class="tag">${x.tag}</span><h3>${x.n}</h3><div class="stars">★★★★★ <small>(${x.r})</small></div><div class="priceRow"><span class="price">$${x.p.toFixed(2)}</span><button class="add" data-add="${x.id}">Add to cart</button></div></div></article>`).join('');grid.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>add(+b.dataset.add));grid.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>toggleWish(+b.dataset.w))}
-function add(id){const p=products.find(x=>x.id===id),i=cart.find(x=>x.id===id);i?i.q++:cart.push({id,q:1});save();toast(`${p.n} added to cart`)}
-function toggleWish(id){wish=wish.includes(id)?wish.filter(x=>x!==id):[...wish,id];save();render()}
-function renderCart(){const box=$('#cartItems');if(!cart.length){box.innerHTML='<p>Your cart is empty.</p>';$('#total').textContent='$0.00';return}let total=0;box.innerHTML=cart.map(x=>{const p=products.find(a=>a.id===x.id);total+=p.p*x.q;return `<div class="cartItem"><img src="assets/${p.img}" alt=""><div><b>${p.n}</b><div>$${p.p.toFixed(2)}</div><div class="qty"><button data-minus="${p.id}">−</button> ${x.q} <button data-plus="${p.id}">+</button></div></div><button data-remove="${p.id}">×</button></div>`}).join('');$('#total').textContent='$'+total.toFixed(2);box.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>{cart.find(x=>x.id==b.dataset.plus).q++;save();renderCart()});box.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>{let x=cart.find(x=>x.id==b.dataset.minus);x.q--;if(x.q<1)cart=cart.filter(a=>a.id!=b.dataset.minus);save();renderCart()});box.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{cart=cart.filter(x=>x.id!=b.dataset.remove);save();renderCart()})}
-$('#search').oninput=render;$('#category').onchange=render;$('#sort').onchange=render;$('#cartBtn').onclick=()=>{$('#drawer').classList.add('open');renderCart()};$('#closeDrawer').onclick=()=>$('#drawer').classList.remove('open');$('#checkout').onclick=()=>toast('Demo checkout — connect your payment provider here.');$('#wishBtn').onclick=()=>toast(`${wish.length} saved favorite${wish.length===1?'':'s'}`);document.querySelectorAll('.cat').forEach(a=>a.onclick=()=>{$('#category').value=a.dataset.cat;render()});$('#supportForm').onsubmit=e=>{e.preventDefault();e.target.reset();toast('Message sent — thank you!')};$('#newsletter').onsubmit=e=>{e.preventDefault();e.target.reset();toast('Welcome to the PAW & HAVEN community!')};
-updateCounts();render();
+let cart=JSON.parse(localStorage.getItem('pawCart')||'[]'), wishes=JSON.parse(localStorage.getItem('pawWish')||'[]'), active='All';
+const $=s=>document.querySelector(s); const grid=$('#productGrid');
+function money(n){return '$'+n.toFixed(2)}
+function render(){let list=products.filter(p=>active==='All'||p[1]===active);let q=($('#search')?.value||$('#msearch')?.value||'').toLowerCase(); if(q)list=list.filter(p=>(p[2]+p[1]+p[5]).toLowerCase().includes(q)); let sort=$('#sort').value;if(sort==='low')list.sort((a,b)=>a[3]-b[3]);if(sort==='high')list.sort((a,b)=>b[3]-a[3]);if(sort==='name')list.sort((a,b)=>a[2].localeCompare(b[2]));grid.innerHTML=list.map((p,i)=>`<article class="card"><button class="heart ${wishes.includes(p[2])?'saved':''}" onclick="toggleWish('${p[2]}')">♡</button><div class="cardImg"><img src="${p[4]}" alt="${p[2]}"></div><div class="cardBody"><small class="cardCat">${p[1]}</small><h3>${p[2]}</h3><p>${p[5]}</p><div class="cardFoot"><b class="price">${money(p[3])}</b><button class="add" onclick="add(${products.indexOf(p)})">Add to cart</button></div></div></article>`).join('')}
+function save(){localStorage.setItem('pawCart',JSON.stringify(cart));localStorage.setItem('pawWish',JSON.stringify(wishes));updateCounts()}
+function updateCounts(){let n=cart.reduce((s,x)=>s+x.qty,0);$('#cartCount').textContent=n;$('#mcount').textContent=n;$('#wishCount').textContent=wishes.length;$('#cartTotal').textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0));renderCart()}
+function add(i){let p=products[i],x=cart.find(a=>a.name===p[2]);x?x.qty++:cart.push({name:p[2],price:p[3],img:p[4],qty:1});save();openCart()}
+function toggleWish(name){let i=wishes.indexOf(name);i>=0?wishes.splice(i,1):wishes.push(name);save()}
+function renderCart(){$('#cartItems').innerHTML=cart.length?cart.map((x,i)=>`<div class="cartItem"><img src="${x.img}"><div><b>${x.name}</b><div>${money(x.price)}</div><button onclick="qty(${i},-1)">−</button> ${x.qty} <button onclick="qty(${i},1)">+</button></div><button onclick="removeItem(${i})">×</button></div>`).join(''):'<p>Your cart is empty.</p>'}
+function qty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);save()}function removeItem(i){cart.splice(i,1);save()}
+function openCart(){$('#drawer').classList.add('open');$('#backdrop').classList.add('show')}function closeAll(){$('#drawer').classList.remove('open');$('#backdrop').classList.remove('show');$('#modal').classList.remove('show')}
+$('#cartBtn').onclick=openCart;$('#mcart').onclick=openCart;$('#closeCart').onclick=closeAll;$('#backdrop').onclick=closeAll;$('#modalClose').onclick=closeAll;$('#sort').onchange=render;$('#search').oninput=render;$('#msearch').oninput=render;
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{active=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});document.querySelectorAll('.cat').forEach(a=>a.onclick=()=>{active=a.dataset.filter;document.querySelectorAll('.filter').forEach(x=>{x.classList.toggle('active',x.dataset.filter===active)});setTimeout(render,50)});
+$('#supportForm').onsubmit=e=>{e.preventDefault();$('#formMsg').textContent='Thanks! Your message has been received.';e.target.reset()};$('#news').onsubmit=e=>{e.preventDefault();alert('Thanks for joining PAW & HAVEN!');e.target.reset()};$('#checkout').onclick=()=>alert('Demo checkout — connect your payment provider here.');
+window.add=add;window.toggleWish=toggleWish;window.qty=qty;window.removeItem=removeItem;
+render();updateCounts();
